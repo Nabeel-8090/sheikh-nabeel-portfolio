@@ -45,27 +45,46 @@ const revealObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(r => revealObs.observe(r));
 
+// EmailJS init
+emailjs.init("Z5DdTINFYgzJf7hKj");
+
 // Contact form
 document.getElementById('contactForm').addEventListener('submit', function (e) {
   e.preventDefault();
   const btn = document.getElementById('submitBtn');
   const msg = document.getElementById('formMsg');
-  const name = document.getElementById('fname').value.trim();
+  const name  = document.getElementById('fname').value.trim();
   const email = document.getElementById('femail').value.trim();
-  const text = document.getElementById('fmsg').value.trim();
+  const text  = document.getElementById('fmsg').value.trim();
+
   if (!name || !email || !text) {
     msg.className = 'form-msg error';
     msg.textContent = 'Please fill in all fields.';
     return;
   }
-  btn.textContent = 'Sending...'; btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = 'Send Message →'; btn.disabled = false;
+
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
+
+  emailjs.send("service_fevk93p", "template_xv5glar", {
+    from_name:  name,
+    from_email: email,
+    message:    text
+  })
+  .then(() => {
     msg.className = 'form-msg success';
     msg.textContent = '✓ Message sent! I\'ll get back to you within 24 hours.';
     this.reset();
     setTimeout(() => { msg.className = 'form-msg'; msg.textContent = ''; }, 5000);
-  }, 1500);
+  })
+  .catch(() => {
+    msg.className = 'form-msg error';
+    msg.textContent = '✗ Something went wrong. Please try again.';
+  })
+  .finally(() => {
+    btn.textContent = 'Send Message →';
+    btn.disabled = false;
+  });
 });
 
 // Active nav link on scroll
