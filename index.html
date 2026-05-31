@@ -4,150 +4,157 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sheikh Nabeel — Full Stack Developer</title>
+  <title>Sheikh Nabeel | Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="icon" type="image/png" href="image.png">
+  <link rel="apple-touch-icon" href="image.png">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <div id="progress"></div>
+  <div id="progress-bar"></div>
 
+  <!-- NAV -->
   <nav id="nav">
-    <a href="#hero" class="nav-logo">
-      <span class="logo-sheikh">s</span><span class="logo-dot">.</span><span class="logo-nabeel">nabeel</span>
-    </a>
+    <a href="#hero" class="nav-logo">SN<span class="logo-dot">.</span></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#hero">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
-      <li><a href="#certificates">Certificates</a></li>
-      <li><a href="#academic">Academic</a></li>
+      <li><a href="#certificates">Certs</a></li>
+      <li><a href="#academic">Education</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <div style="display:flex;align-items:center;gap:1rem">
-      <div class="nav-socials" id="navSocials">
-        <a href="https://github.com/Nabeel-8090" target="_blank" class="social-btn">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/sheikh-nabeel-34687a291/" target="_blank" class="social-btn">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
-        <a href="https://wa.me/923168440955" target="_blank" class="social-btn">
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
+    <div class="nav-right">
+      <div class="nav-socials">
+        <a href="https://github.com/Nabeel-8090" target="_blank" aria-label="GitHub"><i
+            class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/sheikh-nabeel-34687a291/" target="_blank" aria-label="LinkedIn"><i
+            class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://wa.me/923168440955" target="_blank" aria-label="WhatsApp"><i
+            class="fa-brands fa-whatsapp"></i></a>
       </div>
-      <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu">
         <span></span><span></span><span></span>
-      </div>
+      </button>
     </div>
   </nav>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="#hero" onclick="closeMenu()">Home</a>
-    <a href="#about" onclick="closeMenu()">About</a>
-    <a href="#skills" onclick="closeMenu()">Skills</a>
-    <a href="#projects" onclick="closeMenu()">Projects</a>
-    <a href="#certificates" onclick="closeMenu()">Certificates</a>
-    <a href="#academic" onclick="closeMenu()">Academic</a>
-    <a href="#contact" onclick="closeMenu()">Contact</a>
+  <!-- MOBILE MENU -->
+  <div class="mobile-drawer" id="mobileMenu">
+    <button class="drawer-close" onclick="closeMenu()"><i class="fa fa-times"></i></button>
+    <nav>
+      <a href="#hero" onclick="closeMenu()">Home</a>
+      <a href="#about" onclick="closeMenu()">About</a>
+      <a href="#skills" onclick="closeMenu()">Skills</a>
+      <a href="#projects" onclick="closeMenu()">Projects</a>
+      <a href="#certificates" onclick="closeMenu()">Certificates</a>
+      <a href="#academic" onclick="closeMenu()">Education</a>
+      <a href="#contact" onclick="closeMenu()">Contact</a>
+    </nav>
+    <div class="drawer-socials">
+      <a href="https://github.com/Nabeel-8090" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.linkedin.com/in/sheikh-nabeel-34687a291/" target="_blank"><i
+          class="fa-brands fa-linkedin-in"></i></a>
+      <a href="https://wa.me/923168440955" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    </div>
   </div>
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeMenu()"></div>
 
   <!-- HERO -->
   <section id="hero">
-    <div class="hero-bg">
-      <div class="grid-lines"></div>
-      <div class="orb orb1"></div>
-      <div class="orb orb2"></div>
-      <div class="orb orb3"></div>
-    </div>
-    <div class="hero-content">
-      <div>
-        <h1 class="hero-name"><span>Sheikh Nabeel</span></h1>
-        <div class="typing-wrap">
-          <span id="typingText"></span><span class="typing-cursor"></span>
+    <div class="hero-noise"></div>
+    <div class="hero-grid-bg"></div>
+    <div class="hero-inner">
+      <div class="hero-text">
+        <div class="hero-eyebrow"><span class="status-dot"></span>Available for hire</div>
+        <h1 class="hero-name">Sheikh<br><em>Nabeel</em></h1>
+        <div class="hero-role">
+          <span id="typingText"></span><span class="cursor">|</span>
         </div>
-        <p class="hero-desc">Hi! I am a Software Engineering student at GIKI who loves coding,
-          building real-world projects, and learning new technologies.
-          I am curious, creative, and always excited to turn ideas into
-          useful digital solutions.</p>
-        <div class="hero-ctas">
-          <a href="/assets/Sheikh_Nabeel_Resume_Updated.pdf" download class="btn-primary">↓ Download Resume</a>
-          <a href="#projects" class="btn-outline">View Projects →</a>
-          <a href="#contact" class="btn-outline">Contact Me</a>
+        <p class="hero-desc">Software Engineering student at GIKI who loves coding, building real-world projects, and
+          turning ideas into useful digital solutions.</p>
+        <div class="hero-actions">
+          <a href="/assets/Sheikh_Nabeel_Resume_Updated.pdf" download class="btn-primary"><i class="fa fa-download"></i>
+            Resume</a>
+          <a href="#projects" class="btn-ghost">View Work</a>
+          <a href="#contact" class="btn-ghost">Contact</a>
         </div>
         <div class="hero-stats">
-          <div class="stat"><span class="stat-num">1.5+</span><span class="stat-label">Years exp.</span></div>
-          <div class="stat"><span class="stat-num">5+</span><span class="stat-label">Projects</span></div>
-          <div class="stat"><span class="stat-num">9+</span><span class="stat-label">Certifications</span></div>
+          <div class="stat-item"><strong>1.5+</strong><span>Years Exp.</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><strong>5+</strong><span>Projects</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat-item"><strong>9+</strong><span>Certifications</span></div>
         </div>
       </div>
-      <div class="hero-image-wrap">
-        <div class="hero-image-ring">
-          <div class="hero-image-inner">
-            <div class="hero-avatar">👨‍💻</div>
-          </div>
+      <div class="hero-photo-wrap">
+        <div class="photo-frame">
+          <img src="profile.jpeg" alt="Sheikh Nabeel" class="profile-img" />
+          <div class="photo-accent-ring"></div>
+          <div class="photo-badge badge-1"><i class="fa-brands fa-react"></i> React</div>
+          <div class="photo-badge badge-2"><i class="fa-solid fa-code"></i> C++</div>
+          <div class="photo-badge badge-3">3.13 GPA</div>
         </div>
-        <div class="float-tag ft1">⚡ DevOps Basics</div>
-        <div class="float-tag ft3">🚀 Full Stack Dev</div>
       </div>
+    </div>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
     </div>
   </section>
 
   <!-- ABOUT -->
   <section id="about">
     <div class="container">
-      <div class="about-grid reveal">
-        <div>
-          <div class="section-label">About Me</div>
-          <h2 class="section-title">Learning, Building, <span>Growing</span></h2>
-          <p class="section-sub">Software Engineering student at GIKI, currently in my 4th semester.</p>
-          <p style="color:var(--text2);font-size:.95rem;margin-top:1rem;line-height:1.8">I enjoy building things — from
-            compression tools in C++ to full-stack web apps with real databases and authentication. Most of what I know
-            comes from my courses and just sitting down and building projects.</p>
-          <p style="color:var(--text2);font-size:.95rem;margin-top:1rem;line-height:1.8">Right now I'm getting stronger
-            in C++, JavaScript, Next.js, and PostgreSQL. Also exploring DBMS and DevOps through my semester coursework.
-          </p>
-          <p style="color:var(--text2);font-size:.95rem;margin-top:1rem;line-height:1.8">Always open to learning,
-            collaborating, and connecting with people in tech. 🤝
-          </p>
-          <div class="about-cards">
-            <div class="about-card">
-              <div class="about-card-icon">🎯</div>
-              <h4>Mission</h4>
-              <p>Building products that create real impact through clean, maintainable code.</p>
+      <div class="section-header reveal">
+        <div class="label-tag">About Me</div>
+        <h2 class="section-title">Learning, Building, <span>Growing</span></h2>
+      </div>
+      <div class="about-layout reveal">
+        <div class="about-text">
+          <p>Software Engineering student at GIKI, just completed my 4th semester. I enjoy building things — from
+            compression tools in C++ to full-stack web apps with real databases and authentication.</p>
+          <p>Right now I'm getting stronger in C++, JavaScript, Next.js, and PostgreSQL. Also exploring DBMS and DevOps
+            through my semester coursework.</p>
+          <p>Always open to learning, collaborating, and connecting with people in tech. 🤝</p>
+          <div class="about-pillars">
+            <div class="pillar">
+              <div class="pillar-icon">🎯</div>
+              <div>
+                <h4>Mission</h4>
+                <p>Building products that create real impact through clean, maintainable code.</p>
+              </div>
             </div>
-            <div class="about-card">
-              <div class="about-card-icon">🤝</div>
-              <h4>Collab</h4>
-              <p>Open to freelance work, full-time opportunities, and open-source contributions.</p>
+            <div class="pillar">
+              <div class="pillar-icon">🤝</div>
+              <div>
+                <h4>Collab</h4>
+                <p>Open to freelance work, full-time opportunities, and open-source contributions.</p>
+              </div>
             </div>
           </div>
         </div>
-        <div style="display:flex;flex-direction:column;gap:1.5rem">
-          <div style="background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:2rem">
-            <div style="font-family:'JetBrains Mono',monospace;font-size:.8rem;color:var(--text3);margin-bottom:1rem">//
-              tech_profile.json</div>
-            <div style="font-family:'JetBrains Mono',monospace;font-size:.85rem;line-height:2;color:var(--text2)">
-              <span style="color:var(--text3)">{</span><br>
-              &nbsp;&nbsp;<span style="color:var(--accent3)">"name"</span>: <span style="color:var(--teal)">"Sheikh
-                Nabeel"</span>,<br>
-              &nbsp;&nbsp;<span style="color:var(--accent3)">"role"</span>: <span style="color:var(--teal)">"Full Stack
-                Dev"</span>,<br>
-              &nbsp;&nbsp;<span style="color:var(--accent3)">"focus"</span>: [<span
-                style="color:var(--teal)">"React"</span>, <span style="color:var(--teal)">"Node.js"</span>, <span
-                style="color:var(--teal)">"DevOps"</span>],<br>
-              &nbsp;&nbsp;<span style="color:var(--accent3)">"available"</span>: <span
-                style="color:var(--amber)">true</span><br>
-              <span style="color:var(--text3)">}</span>
-            </div>
-          </div>
-
+        <div class="about-code-card">
+          <div class="code-header"><span class="code-dot red"></span><span class="code-dot yellow"></span><span
+              class="code-dot green"></span><span class="code-filename">tech_profile.json</span></div>
+          <pre class="code-body"><span class="c-brace">{</span>
+  <span class="c-key">"name"</span>: <span class="c-str">"Sheikh Nabeel"</span>,
+  <span class="c-key">"role"</span>: <span class="c-str">"Full Stack Dev"</span>,
+  <span class="c-key">"university"</span>: <span class="c-str">"GIKI"</span>,
+  <span class="c-key">"focus"</span>: [
+    <span class="c-str">"C++"</span>, <span class="c-str">"JavaScript"</span>,
+    <span class="c-str">"PostgreSQL"</span>, <span class="c-str">"DevOps"</span>
+  ],
+  <span class="c-key">"cgpa"</span>: <span class="c-num">3.13</span>,
+  <span class="c-key">"available"</span>: <span class="c-bool">true</span>
+<span class="c-brace">}</span></pre>
         </div>
       </div>
     </div>
@@ -156,51 +163,32 @@
   <!-- SKILLS -->
   <section id="skills">
     <div class="container">
-      <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto 0">
-        <div class="section-label">Tech Stack</div>
+      <div class="section-header reveal" style="text-align:center">
+        <div class="label-tag">Tech Stack</div>
         <h2 class="section-title">Skills & <span>Technologies</span></h2>
-
       </div>
       <div class="skills-grid reveal">
-        <div class="skill-cat">
-          <div class="skill-cat-header">
-            <div class="skill-cat-icon" style="background:rgba(124,106,255,.15)">🎨</div>
-            <div class="skill-cat-title">Programming Languages</div>
-          </div>
-          <div class="skill-tags"><span class="skill-tag">C++</span><span class="skill-tag">JavaScript</span></div>
+        <div class="skill-block">
+          <div class="skill-block-head"><span class="sb-icon">💻</span><span>Programming Languages</span></div>
+          <div class="skill-tags"><span>C++</span><span>JavaScript</span></div>
         </div>
-        <div class="skill-cat">
-          <div class="skill-cat-header">
-            <div class="skill-cat-icon" style="background:rgba(0,210,180,.15)">⚙️</div>
-            <div class="skill-cat-title">Web Technologies</div>
-          </div>
-          <div class="skill-tags"><span class="skill-tag">HTML</span><span class="skill-tag">CSS</span><span
-              class="skill-tag">Next.js</span><span class="skill-tag">React</span></div>
+        <div class="skill-block">
+          <div class="skill-block-head"><span class="sb-icon">🌐</span><span>Web Technologies</span></div>
+          <div class="skill-tags"><span>HTML</span><span>CSS</span><span>React</span><span>Next.js</span></div>
         </div>
-        <div class="skill-cat">
-          <div class="skill-cat-header">
-            <div class="skill-cat-icon" style="background:rgba(251,191,36,.15)">🗄️</div>
-            <div class="skill-cat-title">Databases</div>
-          </div>
-          <div class="skill-tags"><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MongoDB</span><span
-              class="skill-tag">Prisma ORM</span></div>
+        <div class="skill-block">
+          <div class="skill-block-head"><span class="sb-icon">🗄️</span><span>Databases</span></div>
+          <div class="skill-tags"><span>PostgreSQL</span><span>MongoDB</span><span>Prisma ORM</span></div>
         </div>
-        <div class="skill-cat">
-          <div class="skill-cat-header">
-            <div class="skill-cat-icon" style="background:rgba(255,107,107,.15)">☁️</div>
-            <div class="skill-cat-title">Concepts</div>
-          </div>
-          <div class="skill-tags"><span class="skill-tag">Object-Oriented Programming (OOP)</span><span
-              class="skill-tag">Data Structures and Algorithms (DSA)</span></div>
+        <div class="skill-block">
+          <div class="skill-block-head"><span class="sb-icon">🧠</span><span>Concepts</span></div>
+          <div class="skill-tags"><span>OOP</span><span>Data Structures & Algorithms</span></div>
         </div>
-        <div class="skill-cat">
-          <div class="skill-cat-header">
-            <div class="skill-cat-icon" style="background:rgba(167,139,250,.15)">🛠️</div>
-            <div class="skill-cat-title">Tools & Technologies</div>
+        <div class="skill-block">
+          <div class="skill-block-head"><span class="sb-icon">🛠️</span><span>Tools & Technologies</span></div>
+          <div class="skill-tags"><span>Git /
+              GitHub</span><span>Cloudinary</span><span>NextAuth.js</span><span>Vercel</span><span>Tailwind CSS</span>
           </div>
-          <div class="skill-tags"><span class="skill-tag">Git/GitHub</span><span
-              class="skill-tag">Cloudinary</span><span class="skill-tag">NextAuth.js</span><span
-              class="skill-tag">Vercel</span><span class="skill-tag">Tailwind CSS</span></div>
         </div>
       </div>
     </div>
@@ -209,112 +197,124 @@
   <!-- PROJECTS -->
   <section id="projects">
     <div class="container">
-      <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto">
-        <div class="section-label">Portfolio</div>
+      <div class="section-header reveal" style="text-align:center">
+        <div class="label-tag">Portfolio</div>
         <h2 class="section-title">Featured <span>Projects</span></h2>
-        <p class="section-sub" style="margin:0 auto">A selection of work I'm proud of.</p>
+        <p class="section-sub">A selection of work I'm proud of.</p>
       </div>
       <div class="projects-grid reveal">
-        <div class="project-card">
-          <div class="project-banner"
-            style="background:linear-gradient(135deg,rgba(124,106,255,.3),rgba(0,210,180,.2))"><img
-              src="favicon-icon.png" alt="PinBoard" /></div>
-          <div class="project-body">
-            <h3>PinBoard - A Visual Pin Sharing Platform</h3>
-            <p>A full-stack web app where users can upload image pins,
-              create boards, like & comment on posts, and explore
-              content by category or keyword.</p>
-            <div class="project-techs"><span class="tech-pill">Next.js</span><span
-                class="tech-pill">PostgreSQL</span><span class="tech-pill">Prisma</span><span
-                class="tech-pill">NextAuth.js</span><span class="tech-pill">Cloudinary</span><span
-                class="tech-pill">Tailwind CSS</span></div>
-            <div class="project-links"><a href="https://pinboard-nextjs.vercel.app/" target="_blank"
-                class="plink live">↗ Live
-                Demo</a><a href="https://github.com/Nabeel-8090/pinboard-nextjs" target="_blank" class="plink">⌥
-                GitHub</a></div>
+
+        <div class="proj-card">
+          <div class="proj-banner banner-purple">
+            <div class="proj-emoji">📌</div>
           </div>
-        </div>
-        <div class="project-card">
-          <div class="project-banner" style="background:linear-gradient(135deg,rgba(0,210,180,.3),rgba(251,191,36,.2))">
-            🔐</div>
-          <div class="project-body">
-            <h3>CryptX - Compression and Encryption Tool</h3>
-            <p>A group DSA project that compresses/decompresses
-              files using Huffman Coding,
-              encrypts/decrypts data with XOR cipher,
-              and tracks user actions with stacks and linked lists.</p>
-            <div class="project-techs"><span class="tech-pill">C++</span><span class="tech-pill">DSA</span><span
-                class="tech-pill">Huffman & XOR Cipher Algorithm</span></div>
-            <div class="project-links"><a href="https://github.com/Nabeel-8090/CryptX-DSA-Project" target="_blank"
-                class="plink">⌥ GitHub</a></div>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-banner"
-            style="background:linear-gradient(135deg,rgba(255,107,107,.3),rgba(124,106,255,.2))">⌨️</div>
-          <div class="project-body">
-            <h3>TypistIQ - Typing Speed Test Application</h3>
-            <p>TypistIQ is a responsive typing speed test app that helps users improve their typing skills with
-              real-time WPM and accuracy tracking, featuring a clean interface and smooth user experience.</p>
-            <div class="project-techs"><span class="tech-pill">C++</span><span class="tech-pill">SFML</span></div>
-            <div class="project-links"><a
-                href="https://drive.google.com/file/d/1PhROhF2xEkDfHRwDa_Ol_dDxHG7zmblK/view?usp=sharing"
-                target="_blank" class="plink live">↗ Video Demo</a><a
-                href="https://github.com/Nabeel-8090/typistiq-typing-speed-test" target="_blank" class="plink">⌥
-                GitHub</a></div>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-banner" style="background:linear-gradient(135deg,rgba(251,191,36,.2),rgba(0,210,180,.3))">
-            🎙️</div>
-          <div class="project-body">
-            <h3>AI Voice Search Assistant</h3>
-            <p>A Python-based voice assistant that automates web
-              searches through simple speech commands, making
-              browsing hands-free and efficient.</p>
-            <div class="project-techs"><span class="tech-pill">Python</span><span
-                class="tech-pill">SpeechRecognition</span><span class="tech-pill">PyAudio</span><span
-                class="tech-pill">Tkinter</span></div>
-            <div class="project-links"><a
-                href="https://drive.google.com/file/d/1Fal80GdpcP-SxxmrLQteIlHyBhR8ZjbZ/view?usp=sharing"
-                target="_blank" class="plink live">↗ Video Demo</a><a
-                href="https://github.com/Nabeel-8090/ai-voice-search-assistant" target="_blank" class="plink">⌥
-                GitHub</a></div>
-          </div>
-        </div>
-        <div class="project-card">
-          <div class="project-banner"
-            style="background:linear-gradient(135deg,rgba(167,139,250,.3),rgba(255,107,107,.2))">🗂️</div>
-          <div class="project-body">
-            <h3>File Organizer & Duplicates Cleaner</h3>
-            <p>A Python automation tool that organizes files
-              by type and removes duplicates using hashing
-              to keep your directories clean and efficient.
-            </p>
-            <div class="project-techs"><span class="tech-pill">Python</span><span class="tech-pill">OOP</span><span
-                class="tech-pill">File Automation</span></div>
-            <div class="project-links"><a
-                href="https://drive.google.com/file/d/1ZZ93nDrdHc4i-_iCLVrFWg9cLtcbJnBK/view?usp=sharing"
-                target="_blank" class="plink live">↗ Video Demo</a><a
-                href="https://github.com/Nabeel-8090/file-organizer-cleaner" target="_blank" class="plink">⌥ GitHub</a>
+          <div class="proj-body">
+            <h3>PinBoard</h3>
+            <p>A full-stack visual pin sharing platform where users can upload images, create boards, like & comment on
+              posts, and explore content by category.</p>
+            <div class="proj-techs">
+              <span>Next.js</span><span>PostgreSQL</span><span>Prisma</span><span>NextAuth.js</span><span>Cloudinary</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://pinboard-nextjs.vercel.app/" target="_blank" class="plink-live"><i
+                  class="fa fa-arrow-up-right-from-square"></i> Live Demo</a>
+              <a href="https://github.com/Nabeel-8090/pinboard-nextjs" target="_blank" class="plink-gh"><i
+                  class="fa-brands fa-github"></i> GitHub</a>
             </div>
           </div>
         </div>
-        <div class="project-card">
-          <div class="project-banner"
-            style="background:linear-gradient(135deg,rgba(0,210,180,.2),rgba(124,106,255,.3))">🛒</div>
-          <div class="project-body">
-            <h3>Amazon Clone (Static UI)</h3>
-            <p>A static Amazon-inspired homepage built with HTML & CSS.
-              Designed for laptop screens only, showcasing layout skills
-              with navigation, product grid, and footer sections.</p>
-            <div class="project-techs"><span class="tech-pill">HTML5</span><span class="tech-pill">CSS3</span></div>
-            <div class="project-links"><a
-                href="https://drive.google.com/file/d/1Y3w5AYh8qzX1U87E9WdVRc5vRFh5relz/view?usp=sharing"
-                target="_blank" class="plink live">↗ Video Demo</a><a href="https://github.com/Nabeel-8090/amazon-clone"
-                target="_blank" class="plink">⌥ GitHub</a></div>
+
+        <div class="proj-card">
+          <div class="proj-banner banner-teal">
+            <div class="proj-emoji">🔐</div>
+          </div>
+          <div class="proj-body">
+            <h3>CryptX</h3>
+            <p>A DSA project that compresses/decompresses files using Huffman Coding, encrypts/decrypts data with XOR
+              cipher, and tracks actions with stacks and linked lists.</p>
+            <div class="proj-techs"><span>C++</span><span>DSA</span><span>Huffman Coding</span><span>XOR Cipher</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://github.com/Nabeel-8090/CryptX-DSA-Project" target="_blank" class="plink-gh"><i
+                  class="fa-brands fa-github"></i> GitHub</a>
+            </div>
           </div>
         </div>
+
+        <div class="proj-card">
+          <div class="proj-banner banner-coral">
+            <div class="proj-emoji">⌨️</div>
+          </div>
+          <div class="proj-body">
+            <h3>TypistIQ</h3>
+            <p>A responsive typing speed test app with real-time WPM and accuracy tracking, featuring a clean interface
+              and smooth user experience.</p>
+            <div class="proj-techs"><span>C++</span><span>SFML</span></div>
+            <div class="proj-links">
+              <a href="https://drive.google.com/file/d/1PhROhF2xEkDfHRwDa_Ol_dDxHG7zmblK/view?usp=sharing"
+                target="_blank" class="plink-live"><i class="fa fa-play"></i> Demo</a>
+              <a href="https://github.com/Nabeel-8090/typistiq-typing-speed-test" target="_blank" class="plink-gh"><i
+                  class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-banner banner-amber">
+            <div class="proj-emoji">🎙️</div>
+          </div>
+          <div class="proj-body">
+            <h3>AI Voice Search</h3>
+            <p>A Python-based voice assistant that automates web searches through simple speech commands, making
+              browsing hands-free and efficient.</p>
+            <div class="proj-techs">
+              <span>Python</span><span>SpeechRecognition</span><span>PyAudio</span><span>Tkinter</span>
+            </div>
+            <div class="proj-links">
+              <a href="https://drive.google.com/file/d/1Fal80GdpcP-SxxmrLQteIlHyBhR8ZjbZ/view?usp=sharing"
+                target="_blank" class="plink-live"><i class="fa fa-play"></i> Demo</a>
+              <a href="https://github.com/Nabeel-8090/ai-voice-search-assistant" target="_blank" class="plink-gh"><i
+                  class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-banner banner-violet">
+            <div class="proj-emoji">🗂️</div>
+          </div>
+          <div class="proj-body">
+            <h3>File Organizer</h3>
+            <p>A Python automation tool that organizes files by type and removes duplicates using hashing to keep
+              directories clean and efficient.</p>
+            <div class="proj-techs"><span>Python</span><span>OOP</span><span>File Automation</span></div>
+            <div class="proj-links">
+              <a href="https://drive.google.com/file/d/1ZZ93nDrdHc4i-_iCLVrFWg9cLtcbJnBK/view?usp=sharing"
+                target="_blank" class="plink-live"><i class="fa fa-play"></i> Demo</a>
+              <a href="https://github.com/Nabeel-8090/file-organizer-cleaner" target="_blank" class="plink-gh"><i
+                  class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="proj-card">
+          <div class="proj-banner banner-steel">
+            <div class="proj-emoji">🛒</div>
+          </div>
+          <div class="proj-body">
+            <h3>Amazon Clone</h3>
+            <p>A static Amazon-inspired homepage built with HTML & CSS, showcasing layout skills with navigation,
+              product grid, and footer sections.</p>
+            <div class="proj-techs"><span>HTML5</span><span>CSS3</span></div>
+            <div class="proj-links">
+              <a href="https://drive.google.com/file/d/1Y3w5AYh8qzX1U87E9WdVRc5vRFh5relz/view?usp=sharing"
+                target="_blank" class="plink-live"><i class="fa fa-play"></i> Demo</a>
+              <a href="https://github.com/Nabeel-8090/amazon-clone" target="_blank" class="plink-gh"><i
+                  class="fa-brands fa-github"></i> GitHub</a>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -322,67 +322,64 @@
   <!-- CERTIFICATES -->
   <section id="certificates">
     <div class="container">
-      <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto">
-        <div class="section-label">Credentials</div>
+      <div class="section-header reveal" style="text-align:center">
+        <div class="label-tag">Credentials</div>
         <h2 class="section-title">Certificates & <span>Courses</span></h2>
       </div>
       <div class="certs-grid reveal">
         <div class="cert-card">
-          <div class="cert-platform" style="color:var(--accent2)">Coursera · University of London</div>
-          <h3>Object-Oriented Programming in C++: Functions</h3>
-          <p>Completed on August 15, 2025</p><a
-            href="https://www.coursera.org/account/accomplishments/verify/VL6YPIFFRPH8" target="_blank"
-            class="cert-btn">View Certificate →</a>
+          <div class="cert-source">Coursera · University of London</div>
+          <h3>OOP in C++: Functions</h3>
+          <p>Aug 15, 2025</p><a href="https://www.coursera.org/account/accomplishments/verify/VL6YPIFFRPH8"
+            target="_blank">View Certificate →</a>
         </div>
         <div class="cert-card">
-          <div class="cert-platform" style="color:var(--teal)">Coursera · Rice University</div>
+          <div class="cert-source">Coursera · Rice University</div>
           <h3>Python Programming Essentials</h3>
-          <p>Completed on August 05, 2025</p><a
-            href="https://www.coursera.org/account/accomplishments/verify/HCE494FGBI4Z" target="_blank"
-            class="cert-btn">View Certificate →</a>
+          <p>Aug 05, 2025</p><a href="https://www.coursera.org/account/accomplishments/verify/HCE494FGBI4Z"
+            target="_blank">View Certificate →</a>
         </div>
         <div class="cert-card">
-          <div class="cert-platform" style="color:var(--amber)">Coursera · IBM</div>
+          <div class="cert-source">Coursera · IBM</div>
           <h3>Generative AI: Prompt Engineering Basics</h3>
-          <p>Completed on August 05, 2025</p><a
-            href="https://www.coursera.org/account/accomplishments/verify/Y59PJG2MM4DU" target="_blank"
-            class="cert-btn">View Certificate →</a>
+          <p>Aug 05, 2025</p><a href="https://www.coursera.org/account/accomplishments/verify/Y59PJG2MM4DU"
+            target="_blank">View Certificate →</a>
         </div>
         <div class="cert-card">
-          <div class="cert-platform" style="color:var(--coral)">Coursera · Microsoft</div>
-          <h3>Data Cleaning & Processing with Copilot in Excel</h3>
-          <p>Completed on July 19, 2025</p><a href="https://coursera.org/share/8570729fffca4d0f05d67d30a324f6e4"
-            target="_blank" class="cert-btn">View Certificate →</a>
+          <div class="cert-source">Coursera · Microsoft</div>
+          <h3>Data Cleaning & Processing with Copilot</h3>
+          <p>Jul 19, 2025</p><a href="https://coursera.org/share/8570729fffca4d0f05d67d30a324f6e4" target="_blank">View
+            Certificate →</a>
         </div>
         <div class="cert-card">
-          <div class="cert-platform" style="color:var(--accent2)">Coursera · Microsoft</div>
+          <div class="cert-source">Coursera · Microsoft</div>
           <h3>Excel and Copilot Fundamentals</h3>
-          <p>Completed on July 17, 2025</p><a href="https://coursera.org/share/49ae4870ec1fcf2a48b46a58062c350a"
-            target="_blank" class="cert-btn">View Certificate →</a>
+          <p>Jul 17, 2025</p><a href="https://coursera.org/share/49ae4870ec1fcf2a48b46a58062c350a" target="_blank">View
+            Certificate →</a>
         </div>
         <div class="cert-card">
-          <div class="cert-platform" style="color:var(--teal)">Coursera · DeepLearning.AI</div>
+          <div class="cert-source">Coursera · DeepLearning.AI</div>
           <h3>AI For Everyone</h3>
-          <p>Completed on June 29, 2025</p><a href="https://coursera.org/share/becab85cbdb652126bcaad98c4049e55"
-            target="_blank" class="cert-btn">View Certificate →</a>
+          <p>Jun 29, 2025</p><a href="https://coursera.org/share/becab85cbdb652126bcaad98c4049e55" target="_blank">View
+            Certificate →</a>
         </div>
         <div class="cert-card">
-          <div class="cert-platform" style="color:var(--amber)">Coursera · Meta</div>
+          <div class="cert-source">Coursera · Meta</div>
           <h3>Version Control</h3>
-          <p>Completed on June 26, 2025</p><a href="https://coursera.org/share/daf3f626e261b85c2be1f214ec153d6d"
-            target="_blank" class="cert-btn">View Certificate →</a>
+          <p>Jun 26, 2025</p><a href="https://coursera.org/share/daf3f626e261b85c2be1f214ec153d6d" target="_blank">View
+            Certificate →</a>
         </div>
         <div class="cert-card">
-          <div class="cert-platform" style="color:var(--coral)">Coursera · Meta</div>
+          <div class="cert-source">Coursera · Meta</div>
           <h3>Introduction to Front-End Development</h3>
-          <p>Completed on October 15, 2023</p><a href="https://coursera.org/share/d6c4b02acb36d6673f19d33881d44280"
-            target="_blank" class="cert-btn">View Certificate →</a>
+          <p>Oct 15, 2023</p><a href="https://coursera.org/share/d6c4b02acb36d6673f19d33881d44280" target="_blank">View
+            Certificate →</a>
         </div>
         <div class="cert-card">
-          <div class="cert-platform" style="color:var(--accent2)">Coursera · Stanford University</div>
+          <div class="cert-source">Coursera · Stanford University</div>
           <h3>Introduction to Mathematical Thinking</h3>
-          <p>Completed on October 13, 2023</p><a href="https://coursera.org/share/1b2febf8c30cd66e7af1ecb9825e0dd0"
-            target="_blank" class="cert-btn">View Certificate →</a>
+          <p>Oct 13, 2023</p><a href="https://coursera.org/share/1b2febf8c30cd66e7af1ecb9825e0dd0" target="_blank">View
+            Certificate →</a>
         </div>
       </div>
     </div>
@@ -391,42 +388,44 @@
   <!-- ACADEMIC -->
   <section id="academic">
     <div class="container">
-      <div class="reveal">
-        <div class="section-label">Education</div>
+      <div class="section-header reveal">
+        <div class="label-tag">Education</div>
         <h2 class="section-title">Academic <span>Background</span></h2>
       </div>
       <div class="timeline reveal">
         <div class="tl-item">
           <div class="tl-year">2024 — 2028</div>
           <div class="tl-card">
-            <h3>BS Software Engineering</h3>
-            <p>GIK Institute</p>
-            <p style="margin-top:.5rem;font-size:.85rem;color:var(--text3)">Software Engineering student at GIKI with
-              strong understanding of Object-Oriented Programming (OOP), Data Structures & Algorithms (DSA), Database
-              Management Systems (DBMS), and DevOps fundamentals. Strong foundation in C++ and continuously exploring
-              core computer science domains.</p>
-            <span class="badge">⚡ Current CGPA: 3.13 / 4.0</span>
+            <div class="tl-top">
+              <h3>BS Software Engineering</h3><span class="tl-badge">Current</span>
+            </div>
+            <p class="tl-inst">GIK Institute</p>
+            <p class="tl-desc">Strong understanding of OOP, DSA, DBMS, and DevOps fundamentals. Solid foundation in C++
+              and continuously exploring core computer science domains.</p>
+            <div class="tl-stat">⚡ CGPA: 3.13 / 4.0</div>
           </div>
         </div>
         <div class="tl-item">
-          <div class="tl-year">2022 - 2024</div>
+          <div class="tl-year">2022 — 2024</div>
           <div class="tl-card">
-            <h3>Intermediate (Pre-Engineering)</h3>
-            <p>TCF College</p>
-            <p style="margin-top:.5rem;font-size:.85rem;color:var(--text3)">Studied Mathematics, Physics, and Chemistry.
-              Built a solid foundation for engineering and logical problem solving.</p>
-            <span class="badge">⚡ Percentage: 79.45%</span>
+            <div class="tl-top">
+              <h3>Intermediate (Pre-Engineering)</h3>
+            </div>
+            <p class="tl-inst">TCF College</p>
+            <p class="tl-desc">Studied Mathematics, Physics, and Chemistry. Built a solid foundation for engineering and
+              logical problem solving.</p>
+            <div class="tl-stat">⚡ 79.45%</div>
           </div>
         </div>
         <div class="tl-item">
           <div class="tl-year">2020 — 2022</div>
           <div class="tl-card">
-            <h3>Matriculation (Science)</h3>
-            <p>TCF School</p>
-            <p style="margin-top:.5rem;font-size:.85rem;color:var(--text3)">Completed matriculation with core science
-              subjects: Physics, Chemistry, Biology, and Mathematics. Developed strong analytical thinking and
-              problem-solving skills.</p>
-            <span class="badge">⚡ Percentage: 90.36%</span>
+            <div class="tl-top">
+              <h3>Matriculation (Science)</h3>
+            </div>
+            <p class="tl-inst">TCF School</p>
+            <p class="tl-desc">Completed with core science subjects: Physics, Chemistry, Biology, and Mathematics.</p>
+            <div class="tl-stat">⚡ 90.36%</div>
           </div>
         </div>
       </div>
@@ -436,64 +435,50 @@
   <!-- CONTACT -->
   <section id="contact">
     <div class="container">
-      <div class="reveal" style="text-align:center;max-width:600px;margin:0 auto">
-        <div class="section-label">Get in Touch</div>
+      <div class="section-header reveal" style="text-align:center">
+        <div class="label-tag">Get in Touch</div>
         <h2 class="section-title">Let's build something <span>great</span></h2>
-        <p class="section-sub" style="margin:0 auto">Have a project in mind or just want to talk tech? My inbox is
-          always open.</p>
+        <p class="section-sub">Have a project in mind or just want to talk tech? My inbox is always open.</p>
       </div>
-      <div class="contact-wrap reveal">
-        <div class="contact-info">
+      <div class="contact-layout reveal">
+        <div class="contact-info-block">
           <h3>Ready to collaborate?</h3>
-          <p>I'm always happy to chat about projects, ideas or opportunities. Feel free to message me, I'd love to hear
-            from you.</p>
-          <div class="contact-item">
-            <div class="contact-item-icon">✉️</div>
-            <div class="contact-item-info"><span class="contact-item-label">Email</span><span
-                class="contact-item-val"><a
-                  href="mailto:sheikhnabeel2201182@gmail.com">sheikhnabeel2201182@gmail.com</a></span></div>
+          <p>I'm always happy to chat about projects, ideas or opportunities. Feel free to reach out!</p>
+          <div class="contact-items">
+            <a href="mailto:sheikhnabeel2201182@gmail.com" class="contact-row">
+              <div class="cr-icon">✉️</div>
+              <div><span class="cr-label">Email</span><span class="cr-val">sheikhnabeel2201182@gmail.com</span></div>
+            </a>
+            <a href="https://wa.me/923168440955" target="_blank" class="contact-row">
+              <div class="cr-icon">📱</div>
+              <div><span class="cr-label">Phone / WhatsApp</span><span class="cr-val">+92 316 844 0955</span></div>
+            </a>
+            <a href="https://github.com/Nabeel-8090" target="_blank" class="contact-row">
+              <div class="cr-icon">💼</div>
+              <div><span class="cr-label">GitHub</span><span class="cr-val">github.com/Nabeel-8090</span></div>
+            </a>
+            <a href="https://www.linkedin.com/in/sheikh-nabeel-34687a291/" target="_blank" class="contact-row">
+              <div class="cr-icon">🔗</div>
+              <div><span class="cr-label">LinkedIn</span><span class="cr-val">sheikh-nabeel</span></div>
+            </a>
           </div>
-          <div class="contact-item">
-            <div class="contact-item-icon">📱</div>
-            <div class="contact-item-info"><span class="contact-item-label">Phone / WhatsApp</span><span
-                class="contact-item-val"><a href="https://wa.me/923168440955" target="_blank">+92 316 844
-                  0955</a></span></div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-item-icon">💼</div>
-            <div class="contact-item-info"><span class="contact-item-label">GitHub</span><span
-                class="contact-item-val"><a href="https://github.com/Nabeel-8090"
-                  target="_blank">github.com/Nabeel-8090</a></span></div>
-          </div>
-          <div class="contact-item">
-            <div class="contact-item-icon">🔗</div>
-            <div class="contact-item-info"><span class="contact-item-label">LinkedIn</span><span
-                class="contact-item-val"><a href="https://www.linkedin.com/in/sheikh-nabeel-34687a291/"
-                  target="_blank">sheikh-nabeel</a></span></div>
-          </div>
-          <div
-            style="margin-top:2rem;padding:1.5rem;background:linear-gradient(135deg,rgba(124,106,255,.1),rgba(0,210,180,.05));border:1px solid rgba(124,106,255,.2);border-radius:16px">
-            <p style="font-size:.875rem;color:var(--text2)">🟢 Currently <strong
-                style="color:var(--teal)">available</strong> for freelance projects and full-time roles.</p>
-          </div>
+          <div class="avail-badge">🟢 Currently <strong>available</strong> for freelance & full-time roles</div>
         </div>
-        <div>
-          <form id="contactForm"
-            style="background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:2rem">
-            <div class="form-group">
+        <div class="contact-form-block">
+          <form id="contactForm">
+            <div class="fg">
               <label>Your Name</label>
               <input type="text" id="fname" placeholder="John Smith" required>
             </div>
-            <div class="form-group">
+            <div class="fg">
               <label>Email Address</label>
               <input type="email" id="femail" placeholder="john@company.com" required>
             </div>
-            <div class="form-group">
+            <div class="fg">
               <label>Message</label>
-              <textarea id="fmsg" placeholder="Tell me about your project or opportunity..." required></textarea>
+              <textarea id="fmsg" placeholder="Tell me about your project..." required></textarea>
             </div>
-            <button type="submit" class="btn-primary" id="submitBtn" style="width:100%;justify-content:center">Send
-              Message →</button>
+            <button type="submit" class="btn-primary full-w" id="submitBtn">Send Message →</button>
             <div class="form-msg" id="formMsg"></div>
           </form>
         </div>
@@ -503,32 +488,25 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">
-      <span style="color:var(--text)">s</span><span style="color:var(--accent2)">.</span><span
-        style="background:linear-gradient(135deg,var(--accent2),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent">nabeel</span>
+    <div class="footer-inner">
+      <div class="footer-logo">SN<span>.</span></div>
+      <ul class="footer-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#certificates">Certs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="footer-socials">
+        <a href="https://github.com/Nabeel-8090" target="_blank"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/sheikh-nabeel-34687a291/" target="_blank"><i
+            class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://wa.me/923168440955" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+      </div>
+      <p class="footer-copy">© 2026 Sheikh Nabeel · Designed & built with ❤️</p>
+      <button class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Top</button>
     </div>
-    <ul class="footer-links">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certificates">Certificates</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="footer-socials">
-      <a href="https://github.com/Nabeel-8090" target="_blank" class="social-btn">
-        <i class="fa-brands fa-github"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/sheikh-nabeel-34687a291/" target="_blank" class="social-btn">
-        <i class="fa-brands fa-linkedin-in"></i>
-      </a>
-      <a href="https://wa.me/923168440955" target="_blank" class="social-btn">
-        <i class="fa-brands fa-whatsapp"></i>
-      </a>
-    </div>
-    <p class="footer-copy">© 2026 Sheikh Nabeel · Designed & built with ❤️</p>
-    <br>
-    <span class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑ Back to top</span>
   </footer>
 
   <script src="script.js"></script>
