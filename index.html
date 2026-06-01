@@ -12,7 +12,12 @@
   <meta name="author" content="Sheikh Nabeel">
   <meta name="keywords" content="Sheikh Nabeel, Full Stack Developer, React, Next.js, GIKI, Portfolio">
 
+  <!-- 1. ADDED: Canonical URL (Helps Google solidify the domain identity) -->
+  <link rel="canonical" href="https://sheikhnabeel-portfolio.vercel.app/">
+
   <!-- Open Graph (WhatsApp, LinkedIn, Facebook previews) -->
+  <!-- 2. ADDED: og:site_name (Crucial for Google Search Site Name) -->
+  <meta property="og:site_name" content="Sheikh Nabeel">
   <meta property="og:title" content="Sheikh Nabeel | Portfolio">
   <meta property="og:description"
     content="Software Engineering student at GIKI. Building modern web apps with React, Next.js, and PostgreSQL.">
@@ -26,6 +31,16 @@
   <meta name="twitter:description"
     content="Software Engineering student at GIKI. Building modern web apps with React, Next.js, and PostgreSQL.">
   <meta name="twitter:image" content="https://sheikhnabeel-portfolio.vercel.app/profile.jpeg">
+
+  <!-- 3. ADDED: Google Site Name Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Sheikh Nabeel",
+    "url": "https://sheikhnabeel-portfolio.vercel.app/"
+  }
+  </script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link
@@ -104,7 +119,8 @@
         <p class="hero-desc">Software Engineering student at GIKI who loves coding, building real-world projects, and
           turning ideas into useful digital solutions.</p>
         <div class="hero-actions">
-          <a href="/assets/Sheikh_Nabeel_Resume_Updated.pdf" target="_blank" class="btn-primary"><i class="fa fa-download"></i>
+          <a href="/assets/Sheikh_Nabeel_Resume_Updated.pdf" target="_blank" class="btn-primary"><i
+              class="fa fa-download"></i>
             Resume</a>
           <a href="#projects" class="btn-ghost">View Work</a>
           <a href="#contact" class="btn-ghost">Contact</a>
