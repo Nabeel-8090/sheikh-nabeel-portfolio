@@ -91,7 +91,8 @@ const ContactSection = () => {
           <ContactButton />
           <a
             href="/resume/Sheikh_Nabeel_Resume_Updated.pdf"
-            download
+            target="_blank"
+            rel="noopener noreferrer"
             className="flex items-center gap-2 rounded-full border-2 border-[#D7E2EA] text-[#D7E2EA] font-medium uppercase tracking-widest px-8 py-3 sm:px-10 sm:py-3.5 text-xs sm:text-sm transition-colors duration-200 hover:bg-[#D7E2EA]/10"
           >
             <FileDown size={16} />
