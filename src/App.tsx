@@ -5,6 +5,7 @@ import EducationSection from './components/EducationSection';
 import SkillsSection from './components/SkillsSection';
 import ProjectsSection from './components/ProjectsSection';
 import ContactSection from './components/ContactSection';
+import Footer from './components/Footer';
 import ContactModal from './components/ContactModal';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <SkillsSection />
         <ProjectsSection />
         <ContactSection />
+        <Footer />
       </div>
       <ContactModal />
     </ContactModalProvider>
