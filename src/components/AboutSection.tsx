@@ -79,8 +79,8 @@ const AboutSection = () => {
         <div className="flex flex-col items-center gap-16 sm:gap-20 md:gap-24">
           <AnimatedText
             text="Software Engineering student at GIKI, just completed my 4th semester. I enjoy building things — from compression tools in C++ to full-stack web apps with real databases and authentication. Right now I'm getting stronger in C++, JavaScript, Next.js, and PostgreSQL. Also exploring DBMS and DevOps through my semester coursework. Always open to learning, collaborating, and connecting with people in tech."
-            className="text-[#D7E2EA] font-medium text-center leading-relaxed max-w-[560px]"
-            style={{ fontSize: 'clamp(1rem, 2vw, 1.35rem)' }}
+            className="text-[#D7E2EA] font-medium text-justify leading-[1.6] max-w-[680px] mx-auto"
+            style={{ fontSize: 'clamp(1rem, 1.8vw, 1.2rem)' }}
           />
 
           <ContactButton />

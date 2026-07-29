@@ -24,12 +24,12 @@ const Character = ({
 
   return (
     <span style={{ position: 'relative', display: 'inline-block' }}>
-      <span style={{ visibility: 'hidden' }}>{char === ' ' ? '\u00A0' : char}</span>
+      <span style={{ visibility: 'hidden' }}>{char}</span>
       <motion.span
         style={{ position: 'absolute', left: 0, top: 0, opacity }}
         aria-hidden="true"
       >
-        {char === ' ' ? '\u00A0' : char}
+        {char}
       </motion.span>
     </span>
   );
@@ -42,19 +42,43 @@ const AnimatedText = ({ text, className = '', style }: AnimatedTextProps) => {
     offset: ['start 0.8', 'end 0.2'],
   });
 
-  const characters = text.split('');
+  const words = text.split(' ');
+  const totalChars = text.replace(/ /g, '').length;
+
+  let globalIndex = 0;
 
   return (
     <p ref={ref} className={className} style={style} aria-label={text}>
-      {characters.map((char, i) => (
-        <Character
-          key={i}
-          char={char}
-          index={i}
-          total={characters.length}
-          progress={scrollYProgress}
-        />
-      ))}
+      {words.map((word, wordIdx) => {
+        const wordSpan = (
+          <span
+            key={wordIdx}
+            style={{ display: 'inline-block', whiteSpace: 'nowrap' }}
+          >
+            {word.split('').map((char, i) => {
+              const charIndex = globalIndex + i;
+              return (
+                <Character
+                  key={i}
+                  char={char}
+                  index={charIndex}
+                  total={totalChars}
+                  progress={scrollYProgress}
+                />
+              );
+            })}
+          </span>
+        );
+        globalIndex += word.length;
+
+        return wordIdx < words.length - 1 ? (
+          <span key={`w-${wordIdx}`}>
+            {wordSpan}{' '}
+          </span>
+        ) : (
+          wordSpan
+        );
+      })}
     </p>
   );
 };
