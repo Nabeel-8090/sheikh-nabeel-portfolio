@@ -7,40 +7,27 @@ import {
   SiHtml5,
   SiCss,
   SiReact,
-  SiNextdotjs,
   SiNodedotjs,
   SiExpress,
   SiPostgresql,
   SiMongodb,
-  SiPrisma,
   SiGit,
   SiGithub,
   SiCloudinary,
   SiVercel,
   SiTailwindcss,
+  SiDocker,
+  SiLinux,
+  SiFirebase,
 } from 'react-icons/si';
 import { TbApi } from 'react-icons/tb';
 import { LuNetwork, LuBrainCircuit } from 'react-icons/lu';
 import FadeIn from './FadeIn';
 
-/**
- * Not every technology has an official brand logo available in react-icons
- * (e.g. abstract concepts like OOP, or rebranded libraries like NextAuth.js).
- * For those we fall back to a sensible generic icon so the grid still looks
- * consistent instead of leaving a gap.
- */
 interface Skill {
   name: string;
   icon: IconType | LucideIcon;
-  color: string; // brand color used for the icon itself
-  /**
-   * Brand logos don't all carry the same amount of "ink" inside their own
-   * viewBox — badge-style marks (HTML5, CSS, Git) are dense and fill the
-   * box, while outline marks (React, Node.js, Tailwind) are thin with lots
-   * of built-in whitespace. Rendering everything at the same numeric size
-   * prop still looks mismatched, so each icon gets a tuned size to read as
-   * visually equal. Defaults to 24 if omitted.
-   */
+  color: string;
   size?: number;
 }
 
@@ -61,12 +48,12 @@ const CATEGORIES: SkillCategory[] = [
   },
   {
     icon: Globe,
-    title: 'Web Technologies',
+    title: 'Frontend Development',
     skills: [
       { name: 'HTML', icon: SiHtml5, color: '#E34F26', size: 20 },
       { name: 'CSS', icon: SiCss, color: '#1572B6', size: 20 },
       { name: 'React', icon: SiReact, color: '#61DAFB', size: 26 },
-      { name: 'Next.js', icon: SiNextdotjs, color: '#000000', size: 22 },
+      { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4', size: 24 },
     ],
   },
   {
@@ -84,7 +71,6 @@ const CATEGORIES: SkillCategory[] = [
     skills: [
       { name: 'PostgreSQL', icon: SiPostgresql, color: '#4169E1', size: 26 },
       { name: 'MongoDB', icon: SiMongodb, color: '#47A248', size: 24 },
-      { name: 'Prisma ORM', icon: SiPrisma, color: '#2D3748', size: 22 },
     ],
   },
   {
@@ -101,9 +87,11 @@ const CATEGORIES: SkillCategory[] = [
     skills: [
       { name: 'Git', icon: SiGit, color: '#F05032', size: 22 },
       { name: 'GitHub', icon: SiGithub, color: '#181717', size: 22 },
+      { name: 'Docker', icon: SiDocker, color: '#2496ED', size: 24},
+      { name: 'Linux', icon: SiLinux, color: '#FCC624', size: 24 },
+      { name: 'Firebase', icon: SiFirebase, color: '#FF9100', size: 24 },
       { name: 'Cloudinary', icon: SiCloudinary, color: '#3448C5', size: 22 },
       { name: 'Vercel', icon: SiVercel, color: '#000000', size: 20 },
-      { name: 'Tailwind CSS', icon: SiTailwindcss, color: '#06B6D4', size: 24 },
     ],
   },
 ];
