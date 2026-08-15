@@ -40,6 +40,17 @@ const PROJECTS: Project[] = [
   {
     number: '03',
     category: 'Personal Project',
+    name: 'Amazon Clone',
+    description:
+      'A fully functional Amazon e-commerce clone with product browsing, search, cart management, checkout, order history, and order tracking.',
+    stack: ['HTML', 'CSS', 'JavaScript', 'Jasmine', 'REST API'],
+    githubUrl: 'https://github.com/Nabeel-8090/javascript-learning/tree/main/L13_Amazon_Project/amazon-project',
+    liveUrl: 'https://amazon-clone-live-wine.vercel.app/',
+    image: '/projects/amazon.png',
+  },
+  {
+    number: '04',
+    category: 'Personal Project',
     name: 'CryptX',
     description:
       'A DSA project that compresses/decompresses files using Huffman Coding, encrypts/decrypts data with XOR cipher, and tracks actions with stacks and linked lists.',
@@ -49,7 +60,7 @@ const PROJECTS: Project[] = [
     image: '/projects/cryptx.jpg',
   },
   {
-    number: '04',
+    number: '05',
     category: 'Personal Project',
     name: 'TypistIQ',
     description:
@@ -60,7 +71,7 @@ const PROJECTS: Project[] = [
     image: '/projects/typistiq.jpeg',
   },
   {
-    number: '05',
+    number: '06',
     category: 'Personal Project',
     name: 'AI Voice Search',
     description:
@@ -71,7 +82,7 @@ const PROJECTS: Project[] = [
     image: '/projects/ai-voice.webp',
   },
   {
-    number: '06',
+    number: '07',
     category: 'Personal Project',
     name: 'File Organizer',
     description:
