@@ -39,3 +39,57 @@ body {
     scroll-behavior: auto !important;
   }
 }
+
+/* ───────── Hero avatar ───────── */
+.hero-avatar {
+  pointer-events: none;
+  height: 100%;
+  /* On narrow screens keep the head to about 60% of the screen width */
+  max-height: 143vw;
+  aspect-ratio: 1100 / 1150;
+}
+
+.hero-avatar .av-float,
+.hero-avatar .av-tilt {
+  height: 100%;
+  width: 100%;
+}
+
+.hero-avatar .av-float {
+  animation: av-float 7s ease-in-out infinite;
+  will-change: transform; /* painted once, then only moved by the GPU */
+}
+
+/* Head follows the pointer a tiny bit (values set from HeroAvatar.tsx) */
+.hero-avatar .av-tilt {
+  transform: translate(calc(var(--hx, 0) * 1px), calc(var(--hy, 0) * 1px));
+  transition: transform 0.3s ease-out;
+}
+
+.hero-avatar .av-iris {
+  transform: translate(calc(var(--ex, 0) * 1px), calc(var(--ey, 0) * 1px));
+  transition: transform 0.2s ease-out;
+}
+
+/* Eyelid: parked above the eye, drops down for a blink */
+.hero-avatar .av-lid {
+  transform: translateY(-48px);
+  animation: av-blink 5.5s infinite;
+}
+
+@keyframes av-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes av-blink {
+  0%, 92%, 100% { transform: translateY(-48px); }
+  95% { transform: translateY(0); }
+}
+
+/* Very short screens (e.g. phones held sideways): no room for a portrait, hide it */
+@media (max-height: 480px) {
+  .hero-avatar-wrap {
+    display: none;
+  }
+}

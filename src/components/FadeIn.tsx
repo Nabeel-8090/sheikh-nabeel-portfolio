@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import type { ReactNode, ElementType } from 'react';
+import type { ReactNode, ElementType, CSSProperties } from 'react';
 
 interface FadeInProps {
   children: ReactNode;
@@ -9,6 +9,7 @@ interface FadeInProps {
   y?: number;
   className?: string;
   as?: ElementType;
+  style?: CSSProperties;
 }
 
 const FadeIn = ({
@@ -19,12 +20,14 @@ const FadeIn = ({
   y = 30,
   className = '',
   as = 'div',
+  style,
 }: FadeInProps) => {
   const MotionTag = motion.create(as as ElementType);
 
   return (
     <MotionTag
       className={className}
+      style={style}
       initial={{ opacity: 0, x, y }}
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, margin: '50px', amount: 0 }}

@@ -2,6 +2,7 @@ import FadeIn from './FadeIn';
 import Magnet from './Magnet';
 import ContactButton from './ContactButton';
 import Hero3DBackground from './Hero3DBackground';
+import HeroAvatar from './HeroAvatar';
 
 const NAV_LINKS = [
   { label: 'About', href: '#about' },
@@ -40,9 +41,20 @@ const HeroSection = () => {
         </div>
       </FadeIn>
 
-      {/* Heading */}
-      <div className="relative z-10 flex flex-col items-center justify-center flex-1 gap-2 sm:gap-3 px-4">
-        <div className="overflow-hidden w-full">
+      {/* Portrait + heading */}
+      <div className="relative z-10 flex flex-col items-center justify-end flex-1 gap-2 sm:gap-3 px-4 pb-3 sm:pb-5">
+        {/* Illustrated portrait: sits inside the rotating rings, shoulders run behind the name */}
+        <FadeIn
+          delay={0.1}
+          y={24}
+          className="hero-avatar-wrap absolute inset-x-0 bottom-0 flex justify-center items-end pointer-events-none"
+          style={{ top: '0.5rem' }}
+        >
+          <HeroAvatar />
+        </FadeIn>
+
+        {/* (no overflow-hidden here: it clipped the text so it never faded in on phones) */}
+        <div className="relative z-10 w-full">
           <FadeIn delay={0.15} y={30}>
             <p
               className="text-center text-[#D7E2EA]/70 font-light uppercase tracking-[0.3em] whitespace-nowrap"
@@ -52,7 +64,7 @@ const HeroSection = () => {
             </p>
           </FadeIn>
         </div>
-        <div className="overflow-hidden w-full">
+        <div className="relative z-10 overflow-hidden w-full">
           <FadeIn delay={0.25} y={40}>
             <h1 className="hero-heading font-black uppercase tracking-tight leading-none whitespace-nowrap w-full text-center text-[10.5vw] sm:text-[9vw] md:text-[8vw] lg:text-[7vw]">
               Sheikh Nabeel
